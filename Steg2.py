@@ -13,6 +13,9 @@ print("Skannar " + (target) + "...")
 
 for port in range(port1, port2 + 1):
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    sock.settimeout(1)
+
     result = sock.connect_ex((target, port))
     
     if result == 0:
