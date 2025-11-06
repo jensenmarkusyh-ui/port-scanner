@@ -21,7 +21,7 @@ for port in range(port1, port2 + 1):  #Looper igenom port 20,21,...
     if result == 0:
         print(f"Port {port}: Öppen")
         try:
-            banner = s.recv(1024).decode(errors="ignore").strip()
+            banner = sock.recv(1024).decode(errors="ignore").strip()
             if banner:
                 print("  Banner:", banner)
             else:
