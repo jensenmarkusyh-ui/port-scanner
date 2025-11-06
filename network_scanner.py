@@ -19,7 +19,6 @@ port2 = int(input("Port2 - "))
 speed = input("Välj hastighet (snabb / mellan / långsam): ").strip().lower()
 
 if speed == "snabb":
-    
     timeout = 0.5
 elif speed == "mellan":
     timeout = 1
@@ -42,7 +41,7 @@ print(f"Skannar port {port1} till {port2}")
 
 probes = {
     80: b"HEAD / HTTP/1.0\r\n\r\n",
-    443: b"HEAD / HTTP/1.0\r\n\r\n",
+    443: b"HEAD / HTTPS/1.0\r\n\r\n",
 }
 
 print("Resultat:")
