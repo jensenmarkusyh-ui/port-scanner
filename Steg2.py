@@ -14,19 +14,13 @@ print("Skannar " + (target) + "...") #Skriver ut att skanningen startar
 for port in range(port1, port2 + 1):  #Looper igenom port 20,21,...
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) #skapar en socket för att ansluta till IPV4 med AF_INET, Sock stream socket används för TCP protokoll
 
-    sock.settimeout(0.5) #timmeout för skanning av alla portar på 0,5 sekunder
+    sock.settimeout(0.3) #timmeout för skanning av alla portar på 0,3 sekunder
 
     result = sock.connect_ex((target, port)) # Försöker göra en TCP-anslutning till (target,port) och returnerar en sifferkod i stället för att kasta undantag.
     
     if result == 0:
-        print(f"Port {port}: Öppen")
-        try:
-            banner = s.recv(1024).decode(errors="ignore").strip()
-            if banner:
-                print("  Banner:", banner)
-            else:
-                print("  Banner: (ingen)")
-        except:
-            print("  Banner: (kunde inte läsa)")
+        print("Port " + str(port) + ": Open") #Om resultatet är 0 ör porten öppen
     else:
-        print(f"Port {port}: Stängd")
+        print("Port " + str(port) + ": Closed") #Om inte så är porten stängd eller inte tillgänglig.
+
+
