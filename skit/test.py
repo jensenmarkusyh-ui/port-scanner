@@ -1,34 +1,25 @@
-"""
-Network Scanner Project
-Students: [Oscar, Pontus, Markus ,Rajan, Jakub]
-Date: [D2025-10-20]
-"""
-
-import socket 
+import socket
 
 max_banner = 15
 
-print("Nätverksskanner v1.0")
-print("====================")
+print("Nätverksskanner v1.1 — enklare banner-probing")
+print("=============================================")
 
 target = input("Vilken ip-address/hostname vill du skanna -> \n")
 print("Mellan vilka portar vill du skanna")
 port1 = int(input("Port1 - "))
 port2 = int(input("Port2 - "))
 
-print("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-print("Nätverksskanner v1.0")
-print("====================")
-print("Mål: " + target)
+print("\n")
+print("Mål:", target)
 print(f"Portintervall: {port1} - {port2}")
-print("Time out: 1 sekund\n")
+print("Time out: 1.0 sekund\n")
 input("Tryck Enter för att börja scanna...\n")
-print(f"Skannar port {port1}/{port2}")
-print("Mål: " + target + "\n")
 
+# enkla protokoll-prober för vanliga portar (kan utökas)
 probes = {
     80: b"HEAD / HTTP/1.0\r\n\r\n",
-    443: b"HEAD / HTTP/1.0\r\n\r\n",
+    443: b"HEAD / HTTPS/1.0\r\n\r\n",
 }
 
 print("Resultat:")
