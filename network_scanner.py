@@ -18,11 +18,7 @@ port1 = int(input("Port1 - ")) #Skanna port från >
 port2 = int(input("Port2 - ")) #Skanna port till <
 speed = input("Välj hastighet (snabb / mellan / långsam): ").strip().lower() # Använder väljer hastighet på hur snabbt skannigen ska skanna
 
-<<<<<<< HEAD
-if speed == "snabb":
-=======
 if speed == "snabb": # Hastigheten som omvanldas till satta nummer för att koden senare ska förstå 
->>>>>>> 045b989584d5bb045f49d94d366720864419abf5
     timeout = 0.5
 elif speed == "mellan": 
     timeout = 1
@@ -43,15 +39,9 @@ print(f"Time out: {timeout} sek\n") # vilken hastighet som kommer köras
 input("Tryck Enter för att börja scanna...\n") # Enter för att starta scripten
 print(f"Skannar port {port1} till {port2}") #Förloppsindikator
 
-<<<<<<< HEAD
-probes = {
-    80: b"HEAD / HTTP/1.0\r\n\r\n",
-    443: b"HEAD / HTTPS/1.0\r\n\r\n",
-=======
 probes = { 
     80: b"HEAD / HTTP/1.0\r\n\r\n", # probes är en lista med portarna som ska testas men själva inte skickar ut en egen banner så som exempelvis SSH gör
     443: b"HEAD / HTTP/1.0\r\n\r\n",
->>>>>>> 045b989584d5bb045f49d94d366720864419abf5
 }
 
 print("Resultat:") 
