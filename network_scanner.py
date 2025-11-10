@@ -9,7 +9,7 @@ import time # Importerar time biblioteket
 
 max_banner = 15 # Variablen väljer hur många tecken en banner kan skriva ut 
 
-print("\033[32mNätverksskanner v1.0\033[0m") # \033[32m   \033[0m gör att texten blir grön visuelt / Röd färg används även nedanför
+print("\033[32mNätverksskanner v1.0\033[0m") # (\033[32m   \033[0m) - gör att texten blir grön visuelt 
 print("====================")
 
 while True:
@@ -29,9 +29,9 @@ print("Mellan vilka portar vill du skanna")
 while True:
     try:
         port1 = int(input("Port1 - "))  # Skanna port från >
-        if 1 <= port1 <= 65535: # kollar så att porten är mellan 1-65535
-            break
-        else: # om inte så kommer detta felmeddelande
+        if 1 <= port1 <= 65535: # kollar så att porten användaren vlat är mellan 1-65535
+            break # avslutar loppen och går vidare 
+        else: # Men om inte så kommer detta felmeddelande
             print("Ange ett nummer mellan 1 och 65535.")
     except ValueError:
         print("Ange ett giltigt nummer.")
@@ -39,7 +39,7 @@ while True:
 while True:
     try:
         port2 = int(input("Port2 - "))  # Skanna port till <
-        if 1 <= port2 <= 65535: # kollar så att porten är mellan 1-65535
+        if 1 <= port2 <= 65535: # kollar så att porten användaren vlat är mellan 1-65535
             break # bryter loopen om det är sant
         else: # om inte så kommer detta felmeddelande
             print("Ange ett nummer mellan 1 och 65535.") 
@@ -107,5 +107,6 @@ for port in range(port1, port2 + 1): # den kör for loopen på varje port mellan
                 print("  Banner: (kunde inte läsa)") # Om något annat fel hände kommer detta meddelandet
 
         else:
-             print(f"🔴 Port {port}: \033[31mClose\033[0m") # alltså om resultatet inte är 0, är alltså porten Closed
+             print(f"🔴 Port {port}: \033[31mClose\033[0m") #(\033[31m   \033[0m) - gör att texten blir röd visuelt 
+              # alltså om resultatet inte är 0, är alltså porten Closed
 sock.close() # Stänger socket-anslutningen
