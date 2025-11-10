@@ -24,6 +24,8 @@ while True:
     except socket.gaierror: # Om det inte lyckas få tag på IP-adressen
         print("Felaktig IP-adress eller hostname, försök igen.") # felmeddelande
         
+print("Mellan vilka portar vill du skanna")
+
 while True:
     try:
         port1 = int(input("Port1 - "))  # Skanna port från >
