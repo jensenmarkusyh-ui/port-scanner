@@ -47,10 +47,10 @@ probes = {
 print("Resultat:") 
 print("---------")
 
-for port in range(port1, port2 + 1): # den går igenom varje port mellan port1 till port2 och aäven själva port2
+for port in range(port1, port2 + 1): # den kör for loopen på varje port mellan port1 till port2 och även själva port2
    
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM) # denna skapar en TCP socket
-        sock.settimeout(timeout)  #Detta är hastigheten vi har satt innan. så vi inte hänger för länge om vid en port ifall den inte svarar        
+        sock.settimeout(timeout)  #Detta är hastigheten vi har satt innan. så vi inte hänger för länge vid en port, ifall den inte svarar        
         result = sock.connect_ex((target, port)) #Den försöker att ansluta till target och den valda porten.
          # om det finns kontakt med porten så retunerar connect_ex = 0 om anslutningen lyckades, annars ett fel meddelande/felnummer
 
@@ -64,7 +64,7 @@ for port in range(port1, port2 + 1): # den går igenom varje port mellan port1 t
                 pass #  Om något går fel gör pass så att scripten bara fortsätter utan att göra något mer
 
             try:
-                banner = sock.recv(4096).decode(errors="ignore").strip() # läser svaren från bannern
+                banner = sock.recv(4096).decode(errors="ignore").strip() # läser svaren från bannern, 4096 skickar mer data
                 if banner: # om den hittar något 
                     if len(banner) > max_banner: # om bannern är väldigt lång
                         banner = banner[:max_banner] # denna kortar ner bannern till 15 tecken för att inte det ska bli så himla rörigt
