@@ -55,7 +55,7 @@ När man skriver en ogiltig port så kommer det felmeddelande som säger att man
 Nätverk skanningen fungerar inte om man inte är uppkopplad till nätverket.
 
 [ ] Testa med olika timeout-värden\
-Vi har 3 olika timeout alternativ. Snabb, mellan och långsam. Om man skriver in ett felt värde så kommer det upp ett felmeddelande och skanningen körs inte.
+Vi har 3 olika timeout alternativ. Snabb, mellan och långsam. Om man skriver in ett felt värde så kommer det upp ett felmeddelande och deduflt tiden på 1 sekund används 
 
 
 
