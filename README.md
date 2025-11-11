@@ -46,10 +46,10 @@ När vi kör scanme.nmap.org på portarna 20 till 80 så visar den att port 22 &
 (45.33.32.156)
 
 [ ] Testa med giltiga och ogiltiga IP-adresser\
-När man skriver en giltig IP-adress så skannar den igenom portarna som man har givit. Skriver man en felaktig IP-adress så kommer alla portar vara stängda i skanningen. 
+När man skriver en giltig IP-adress så skannar den igenom portarna som man har givit. Skriver man en felaktig IP-adress så kommer den be användaren skriva in en ny ip address
 
 [ ] Testa med ogiltiga portintervall\
-När man skriver en ogiltig port så kommer det felmeddelande och koden kommer ej att köras. 
+När man skriver en ogiltig port så kommer det felmeddelande som säger att man måste använda ett tal mellan 1-65535 och så får användaren skriva in en gång till. 
 
 [ ] Testa felhantering (vad händer om internet är frånkopplat?)\
 Nätverk skanningen fungerar inte om man inte är uppkopplad till nätverket.
@@ -60,11 +60,9 @@ Vi har 3 olika timeout alternativ. Snabb, mellan och långsam. Om man skriver in
 
 
 ## Known Limitations
-
-- När vi skriver in felaktig ip-adress visar den att alla portar är stängda.
-- När man skriver en ogiltig port t.ex -1, så kommer det felmeddelande och koden kommer ej att köras
-- Nätverk skanningen fungerar inte om man inte är uppkopplad till nätverket.
-- Vi har 3 olika timeout alternativ. Snabb, mellan och långsam. Om man skriver in ett felt värde så kommer det upp ett felmeddelande och skanningen körs inte.
+- Nätverk skanningen fungerar inte om man inte är uppkopplad till nätverket. 
+- När man skriver att första porten i portintervallen är större än den andra craschar scripten 
+- Om man skriver in en ip address med som inte leder någon stans men ändå är uppbyggd på rätt sätt, t.ex 189.192.1.1 så kommer scripten köras men visa att alla portar är stängda 
  
 
 
